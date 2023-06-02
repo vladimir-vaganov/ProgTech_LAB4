@@ -84,11 +84,104 @@ void analysis(vector <int> data){
     cout << "\n\n\n_______________________________________\n\n";
 }
 
+void randTime(){
+    cout << "\n\n\nRandom number generation with C++ tools\n\n";
+
+    vector <int> data100 = {},
+                     data500 = {},
+                     data1000 = {},
+                     data5000 = {},
+                     data10000 = {},
+                     data50000 = {},
+                     data100000 = {},
+                     data500000 = {},
+                     data1000000 = {},
+                     data5000000 = {};
+
+    srand(time(NULL));
+
+    auto start_t = chrono::steady_clock::now();
+    for (long i = 0; i < 100; i++)
+        data100.push_back(rand());
+    cout << "Generation time for volume of\t100\t"
+         << chrono::duration_cast<std::chrono::nanoseconds>(chrono::steady_clock::now() - start_t).count()
+         << " ns\n";
+
+    start_t = chrono::steady_clock::now();
+    for (long i = 0; i < 500; i++)
+        data500.push_back(rand());
+    cout << "Generation time for volume of\t500\t"
+         << chrono::duration_cast<std::chrono::nanoseconds>(chrono::steady_clock::now() - start_t).count()
+         << " ns\n";
+
+    start_t = chrono::steady_clock::now();
+    for (long i = 0; i < 1000; i++)
+        data1000.push_back(rand());
+    cout << "Generation time for volume of\t1000\t"
+         << chrono::duration_cast<std::chrono::nanoseconds>(chrono::steady_clock::now() - start_t).count()
+         << " ns\n";
+
+    start_t = chrono::steady_clock::now();
+    for (long i = 0; i < 5000; i++)
+        data5000.push_back(rand());
+    cout << "Generation time for volume of\t5000\t"
+         << chrono::duration_cast<std::chrono::nanoseconds>(chrono::steady_clock::now() - start_t).count()
+         << " ns\n";
+
+    start_t = chrono::steady_clock::now();
+    for (long i = 0; i < 10000; i++)
+        data10000.push_back(rand());
+    cout << "Generation time for volume of\t10000\t"
+         << chrono::duration_cast<std::chrono::nanoseconds>(chrono::steady_clock::now() - start_t).count()
+         << " ns\n";
+
+    start_t = chrono::steady_clock::now();
+    for (long i = 0; i < 50000; i++)
+        data50000.push_back(rand());
+    cout << "Generation time for volume of\t50000\t"
+         << chrono::duration_cast<std::chrono::nanoseconds>(chrono::steady_clock::now() - start_t).count()
+         << " ns\n";
+
+    start_t = chrono::steady_clock::now();
+    for (long i = 0; i < 100000; i++)
+        data100000.push_back(rand());
+    cout << "Generation time for volume of\t100000\t"
+         << chrono::duration_cast<std::chrono::nanoseconds>(chrono::steady_clock::now() - start_t).count()
+         << " ns\n";
+
+    start_t = chrono::steady_clock::now();
+    for (long i = 0; i < 500000; i++)
+        data500000.push_back(rand());
+    cout << "Generation time for volume of\t500000\t"
+         << chrono::duration_cast<std::chrono::nanoseconds>(chrono::steady_clock::now() - start_t).count()
+         << " ns\n";
+
+    start_t = chrono::steady_clock::now();
+    for (long i = 0; i < 1000000; i++)
+        data1000000.push_back(rand());
+    cout << "Generation time for volume of\t1000000\t"
+         << chrono::duration_cast<std::chrono::nanoseconds>(chrono::steady_clock::now() - start_t).count()
+         << " ns\n";
+
+    start_t = chrono::steady_clock::now();
+    for (long i = 0; i < 5000000; i++)
+        data5000000.push_back(rand());
+    cout << "Generation time for volume of\t5000000\t"
+         << chrono::duration_cast<std::chrono::nanoseconds>(chrono::steady_clock::now() - start_t).count()
+         << " ns\n";
+
+    cout << "\n\n\n";
+}
+
 int main(){
     int choice;
-    cout << "Choose a generator:\n\n1. XOR-shift\n2. Linear congruent\n\n";
+    cout << "Choose a generator:\n\n1. XOR-shift\n2. Ne pridumal\n\n";
     cin >> choice;
     cout << endl;
+
+    randTime();
+
+    cout << "\n\n\nRandom number generation with custom generator:\n\n";
 
     if (choice == 1){
         Generator aboba(3359, 0, 10000, 1);
