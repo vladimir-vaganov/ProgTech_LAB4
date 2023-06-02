@@ -1,5 +1,4 @@
 #include <iostream>
-#include <fstream>
 #include <cmath>
 #include <vector>
 #include <algorithm>
@@ -87,13 +86,12 @@ void analysis(vector <int> data){
 
 int main(){
     int choice;
-    cout << "Choose a generator:\n\n1. XOR-shift\n2. Ne pridumal\n\n";
+    cout << "Choose a generator:\n\n1. XOR-shift\n2. Linear congruent\n\n";
     cin >> choice;
     cout << endl;
 
     if (choice == 1){
         Generator aboba(3359, 0, 10000, 1);
-        ofstream out("output.txt");
         vector <int> data100 = {},
                      data500 = {},
                      data1000 = {},
@@ -190,7 +188,6 @@ int main(){
 
     if (choice == 2){
         Generator aboba(3359, 0, 10000, 2);
-        ofstream out("output.txt");
         vector <int> data100 = {},
                      data500 = {},
                      data1000 = {},
